@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'package:rent_n_hire/core/constants/colors.dart';
 
 class BottomNavBar extends StatelessWidget {
@@ -17,20 +18,21 @@ class BottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: navigationShell,
-      bottomNavigationBar: bottombar1(),
+      bottomNavigationBar: bottombar2(context),
     );
   }
 
   Widget bottombar2(BuildContext ctx) {
     return NavigationBar(
-        backgroundColor: onPrimary,
+        backgroundColor: Theme.of(ctx).scaffoldBackgroundColor,
         selectedIndex: navigationShell.currentIndex,
+        indicatorColor: kyellow.withOpacity(0.35),
         onDestinationSelected: navigationShell.goBranch,
         destinations: destinations
             .map((destination) => NavigationDestination(
                 icon: Icon(
                   destination.icon,
-                  color: Colors.white,
+                  color: kyellow,
                 ),
                 label: destination.label))
             .toList());
@@ -59,7 +61,8 @@ class Destination {
 }
 
 List<Destination> destinations = [
-  Destination(icon: Icons.home, label: "Home"),
-  Destination(icon: Icons.explore, label: "Explore"),
-  Destination(icon: Icons.person, label: "Profile"),
+  Destination(icon: HugeIcons.strokeRoundedHome10, label: "Home"),
+  Destination(icon: HugeIcons.strokeRoundedSearch01, label: "Search"),
+  Destination(icon: HugeIcons.strokeRoundedClock01, label: "History"),
+  Destination(icon: HugeIcons.strokeRoundedUser, label: "Profile"),
 ];

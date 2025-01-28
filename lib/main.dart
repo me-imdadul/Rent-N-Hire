@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:rent_n_hire/core/di/injection_container.dart';
 import 'package:rent_n_hire/core/theme/app_theme.dart';
 import 'package:rent_n_hire/routing/app_router.dart';
 
 import 'shared/providers/theme_provider.dart';
 
-void main() {
+void main() async {
   init();
+  await Hive.initFlutter();
+  await Hive.openBox('localDB');
   runApp(const ProviderScope(child: MyApp()));
 }
 
