@@ -7,32 +7,49 @@ final appTextTheme = GoogleFonts.lexendGigaTextTheme();
 final appLightTheme = ThemeData(
     brightness: Brightness.light,
     useMaterial3: true,
+    primaryColor: kyellow,
+    primaryColorLight: kyellow,
+    textSelectionTheme: TextSelectionThemeData(
+        selectionHandleColor: kyellow,
+        cursorColor: kyellow,
+        selectionColor: kyellow.withOpacity(0.5)),
     textTheme: appTextTheme,
     scaffoldBackgroundColor: Colors.white,
-    inputDecorationTheme:
-        InputDecorationTheme(focusedBorder: textformfieldborder),
+    inputDecorationTheme: InputDecorationTheme(
+      focusedBorder: textformfieldborder,
+    ),
     textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-            textStyle: TextStyle(color: Colors.black))),
+            textStyle: const TextStyle(color: Colors.black))),
     appBarTheme: const AppBarTheme(
-        backgroundColor: Colors.white, surfaceTintColor: Colors.white));
+        foregroundColor: Colors.black87,
+        backgroundColor: Colors.white,
+        surfaceTintColor: Colors.white));
 
 final appDarkTheme = ThemeData(
+    primaryColor: kyellow,
     brightness: Brightness.dark,
     textTheme: appTextTheme,
+    textSelectionTheme: TextSelectionThemeData(
+        selectionHandleColor: kyellow,
+        cursorColor: kyellow,
+        selectionColor: kyellow.withOpacity(0.5)),
     inputDecorationTheme:
         InputDecorationTheme(focusedBorder: textformfieldborder),
     textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-            textStyle: TextStyle(color: Colors.white))),
+            textStyle: const TextStyle(color: Colors.white))),
     useMaterial3: true,
     scaffoldBackgroundColor: appBgColor,
     appBarTheme: const AppBarTheme(
-        backgroundColor: appBgColor, surfaceTintColor: appBgColor));
+        foregroundColor: Colors.white,
+        backgroundColor: appBgColor,
+        surfaceTintColor: appBgColor));
+
 final textformfieldborder = OutlineInputBorder(
     borderRadius: BorderRadius.circular(12),
     borderSide: const BorderSide(color: kyellow));

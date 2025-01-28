@@ -1,22 +1,152 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:rent_n_hire/shared/providers/theme_provider.dart';
+import 'package:gap/gap.dart';
+import 'package:hugeicons/hugeicons.dart';
+import 'package:text_divider/text_divider.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        title: const Row(
+          children: [
+            Icon(HugeIcons.strokeRoundedLocation01),
+            Gap(5),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Kiling Road',
+                  style: TextStyle(fontSize: 17),
+                ),
+                Text(
+                  'Baridua, India',
+                  style: TextStyle(fontSize: 12),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
-      body: Center(
-        child: ElevatedButton(
-            onPressed: () {
-              ref.watch(themeNotifierProvider.notifier).toggleTheme();
-            },
-            child: const Text('Toggle Theme')),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: SizedBox(
+                height: size.height * 0.23,
+                width: size.width,
+                child: Placeholder(),
+              ),
+            ),
+            const Gap(10),
+            TextDivider(
+                text: Text(
+              'Explore',
+              style: TextStyle(
+                  fontSize: 13,
+                  color: Theme.of(context).brightness == Brightness.light
+                      ? Colors.black54
+                      : Colors.grey),
+            )),
+            const Gap(25),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: List.generate(
+                    6,
+                    (index) => Container(
+                          margin: EdgeInsets.symmetric(horizontal: 8),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Column(
+                            children: [
+                              const SizedBox(
+                                height: 140,
+                                width: 110,
+                                child: Placeholder(),
+                              ),
+                              const Gap(10),
+                              Text(
+                                'Category',
+                                style: TextStyle(
+                                    fontSize: 13,
+                                    color: Theme.of(context).brightness ==
+                                            Brightness.light
+                                        ? Colors.black87
+                                        : Colors.grey),
+                              )
+                            ],
+                          ),
+                        )),
+              ),
+            ),
+            const Gap(25),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 18),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Explore',
+                    style: TextStyle(
+                        fontSize: 18,
+                        color: Theme.of(context).brightness == Brightness.light
+                            ? Colors.black
+                            : Colors.grey),
+                  ),
+                  Text(
+                    'see all',
+                    style: TextStyle(
+                        fontSize: 13,
+                        color: Theme.of(context).brightness == Brightness.light
+                            ? Colors.black54
+                            : Colors.grey),
+                  ),
+                ],
+              ),
+            ),
+            const Gap(10),
+            Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: GridView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    childAspectRatio: 3 / 4.3,
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 12,
+                    crossAxisSpacing: 12),
+                shrinkWrap: true,
+                itemCount: 8,
+                itemBuilder: (context, index) => Container(
+                  child: Column(
+                    children: [
+                      const SizedBox(
+                        height: 230,
+                        child: Placeholder(),
+                      ),
+                      const Gap(10),
+                      Text(
+                        'Category',
+                        style: TextStyle(
+                            fontSize: 13,
+                            color:
+                                Theme.of(context).brightness == Brightness.light
+                                    ? Colors.black87
+                                    : Colors.grey),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

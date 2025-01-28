@@ -11,6 +11,8 @@ class UserDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+    bool isDark =
+        Theme.of(context).brightness == Brightness.light ? false : true;
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
@@ -25,30 +27,28 @@ class UserDetail extends StatelessWidget {
           child: Column(
             children: [
               _buildInputfield(
-                title: "What's your name?",
-                hint: "Eneter your name",
-              ),
-              _buildGenderSelect(title: "Choose your gender"),
+                  title: "What's your name?",
+                  hint: "Eneter your name",
+                  isDark: isDark),
+              _buildGenderSelect(title: "Choose your gender", isDark: isDark),
               _buildInputfield(
-                title: "Your email address",
-                hint: "Eneter your name",
-              ),
+                  title: "Your email address",
+                  hint: "Eneter your name",
+                  isDark: isDark),
               _buildInputfield(
-                title: "Your address",
-                hint: "Eneter your address",
-              ),
+                  title: "Your address",
+                  hint: "Eneter your address",
+                  isDark: isDark),
               _buildInputfield(
-                title: "Your city",
-                hint: "Eneter your city",
-              ),
+                  title: "Your city", hint: "Eneter your city", isDark: isDark),
               _buildInputfield(
-                title: "Your state",
-                hint: "Eneter your state",
-              ),
+                  title: "Your state",
+                  hint: "Eneter your state",
+                  isDark: isDark),
               _buildInputfield(
-                title: "Your pincode",
-                hint: "Eneter your pincode",
-              ),
+                  title: "Your pincode",
+                  hint: "Eneter your pincode",
+                  isDark: isDark),
               const Gap(25),
               SizedBox(
                 width: size.width,
@@ -75,11 +75,11 @@ class UserDetail extends StatelessWidget {
     );
   }
 
-  Widget _buildInputfield({
-    TextEditingController? controller,
-    required String title,
-    required String hint,
-  }) {
+  Widget _buildInputfield(
+      {TextEditingController? controller,
+      required String title,
+      required String hint,
+      required bool isDark}) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 10.0),
       child: Column(
@@ -87,7 +87,8 @@ class UserDetail extends StatelessWidget {
         children: [
           Text(
             title,
-            style: const TextStyle(fontSize: 14),
+            style: TextStyle(
+                fontSize: 14, color: isDark ? Colors.white : Colors.black),
           ),
           const Gap(12),
           Container(
@@ -106,9 +107,7 @@ class UserDetail extends StatelessWidget {
     );
   }
 
-  Widget _buildGenderSelect({
-    required String title,
-  }) {
+  Widget _buildGenderSelect({required String title, required bool isDark}) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 10.0),
       child: Column(
@@ -116,7 +115,8 @@ class UserDetail extends StatelessWidget {
         children: [
           Text(
             title,
-            style: const TextStyle(fontSize: 14),
+            style: TextStyle(
+                fontSize: 14, color: isDark ? Colors.white : Colors.black),
           ),
           const Gap(12),
           Row(
@@ -134,7 +134,9 @@ class UserDetail extends StatelessWidget {
                     const Gap(8),
                     Text(
                       genders[index].gender,
-                      style: const TextStyle(fontSize: 13),
+                      style: TextStyle(
+                          fontSize: 13,
+                          color: isDark ? Colors.white : Colors.black),
                     )
                   ],
                 ),

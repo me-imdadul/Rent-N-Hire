@@ -5,6 +5,7 @@ class Routes {
   static String userDetail = "/userdetail";
   static String setting = "/setting";
   static String profile = "/profile";
-  static String explore = "/explore";
+  static String history = "/history";
+  static String search = "/search";
   static String booking = "/booking";
 }

@@ -1,7 +1,8 @@
 import 'package:go_router/go_router.dart';
 import 'package:rent_n_hire/features/authentication/presentation/screens/login.dart';
 import 'package:rent_n_hire/features/authentication/presentation/screens/user_detail.dart';
-import 'package:rent_n_hire/features/explore/presentation/screens/explore.dart';
+import 'package:rent_n_hire/features/history/presentation/screens/history.dart';
+import 'package:rent_n_hire/features/search/presentation/screens/explore.dart';
 import 'package:rent_n_hire/features/profile/presentation/screens/profile.dart';
 import 'package:rent_n_hire/routing/routes.dart';
 import 'package:rent_n_hire/shared/widgets/bottom_nav_bar.dart';
@@ -27,8 +28,16 @@ class AppRouter {
           StatefulShellBranch(
             routes: [
               GoRoute(
-                path: Routes.explore,
-                builder: (context, state) => const ExploreScreen(),
+                path: Routes.search,
+                builder: (context, state) => const SearchScreen(),
+              ),
+            ],
+          ),
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: Routes.history,
+                builder: (context, state) => const HistoryScreen(),
               ),
             ],
           ),
@@ -53,6 +62,10 @@ class AppRouter {
       GoRoute(
         path: Routes.userDetail,
         builder: (context, state) => const UserDetail(),
+      ),
+      GoRoute(
+        path: Routes.profile,
+        builder: (context, state) => const ProfileScreen(),
       ),
     ],
   );
