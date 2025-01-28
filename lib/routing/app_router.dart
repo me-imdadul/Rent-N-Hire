@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:rent_n_hire/features/authentication/presentation/screens/login.dart';
+import 'package:rent_n_hire/features/authentication/presentation/screens/user_detail.dart';
 import 'package:rent_n_hire/features/explore/presentation/screens/explore.dart';
 import 'package:rent_n_hire/features/profile/presentation/screens/profile.dart';
 import 'package:rent_n_hire/routing/routes.dart';
@@ -48,6 +49,10 @@ class AppRouter {
       GoRoute(
         path: Routes.login,
         builder: (context, state) => const LoginScreen(),
+      ),
+      GoRoute(
+        path: Routes.userDetail,
+        builder: (context, state) => const UserDetail(),
       ),
     ],
   );

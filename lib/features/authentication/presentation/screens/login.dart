@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:rent_n_hire/core/theme/styles.dart';
 import 'package:text_divider/text_divider.dart';
 
@@ -14,7 +15,7 @@ class LoginScreen extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-              height: size.height * 0.48,
+              height: size.height * 0.44,
               width: size.width,
               child: const Placeholder(),
             ),
@@ -51,7 +52,9 @@ class LoginScreen extends StatelessWidget {
                   SizedBox(
                     width: size.width,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        context.push('/userdetail');
+                      },
                       style: authbtnstyle,
                       child: const Text(
                         'Continue',
