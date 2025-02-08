@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rent_n_hire/core/constants/colors.dart';
 
-final appTextTheme = GoogleFonts.lexendGigaTextTheme();
+final appTextTheme = GoogleFonts.geologicaTextTheme();
 
 final appLightTheme = ThemeData(
     brightness: Brightness.light,
