@@ -49,47 +49,56 @@ class HomeScreen extends ConsumerWidget {
         ],
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(18.0),
-              child: SizedBox(
+        child: Padding(
+          padding: const EdgeInsets.all(14.0),
+          child: Column(
+            children: [
+              SizedBox(
                 height: size.height * 0.23,
                 width: size.width,
-                child: const Placeholder(),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
+                  child: Image.asset(
+                    'assets/placeholder1.jpg',
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
-            ),
-            const Gap(10),
-            TextDivider(
-                text: Text(
-              'Explore',
-              style: TextStyle(
-                  fontSize: 13,
-                  color: Theme.of(context).brightness == Brightness.light
-                      ? Colors.black54
-                      : Colors.grey),
-            )),
-            const Gap(25),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
+              const Gap(30),
+              TextDivider(
+                  text: Text(
+                'Explore',
+                style: TextStyle(
+                    fontSize: 13,
+                    color: Theme.of(context).brightness == Brightness.light
+                        ? Colors.black54
+                        : Colors.grey),
+              )),
+              const Gap(30),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: List.generate(
-                    6,
+                    3,
                     (index) => Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 8),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: Column(
                             children: [
-                              const SizedBox(
+                              SizedBox(
                                 height: 140,
-                                width: 110,
-                                child: Placeholder(),
+                                width: 120,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(12),
+                                  child: Image.asset(
+                                    'assets/placeholder1.jpg',
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
                               ),
                               const Gap(10),
                               Text(
-                                'Category',
+                                'Category $index',
                                 style: TextStyle(
                                     fontSize: 13,
                                     color: Theme.of(context).brightness ==
@@ -101,36 +110,35 @@ class HomeScreen extends ConsumerWidget {
                           ),
                         )),
               ),
-            ),
-            const Gap(25),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 18),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Explore',
-                    style: TextStyle(
-                        fontSize: 18,
-                        color: Theme.of(context).brightness == Brightness.light
-                            ? Colors.black
-                            : Colors.grey),
-                  ),
-                  Text(
-                    'see all',
-                    style: TextStyle(
-                        fontSize: 13,
-                        color: Theme.of(context).brightness == Brightness.light
-                            ? Colors.black54
-                            : Colors.grey),
-                  ),
-                ],
+              const Gap(25),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 18),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Explore',
+                      style: TextStyle(
+                          fontSize: 18,
+                          color:
+                              Theme.of(context).brightness == Brightness.light
+                                  ? Colors.black
+                                  : Colors.grey),
+                    ),
+                    Text(
+                      'see all',
+                      style: TextStyle(
+                          fontSize: 13,
+                          color:
+                              Theme.of(context).brightness == Brightness.light
+                                  ? Colors.black54
+                                  : Colors.grey),
+                    ),
+                  ],
+                ),
               ),
-            ),
-            const Gap(10),
-            Padding(
-              padding: const EdgeInsets.all(18.0),
-              child: GridView.builder(
+              const Gap(20),
+              GridView.builder(
                 physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     childAspectRatio: 3 / 4.3,
@@ -159,9 +167,9 @@ class HomeScreen extends ConsumerWidget {
                     ],
                   ),
                 ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );
