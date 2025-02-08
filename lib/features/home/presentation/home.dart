@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
-import 'package:hugeicons/hugeicons.dart';
+import 'package:rent_n_hire/core/constants/colors.dart';
 import 'package:text_divider/text_divider.dart';
 
 class HomeScreen extends ConsumerWidget {
@@ -12,25 +12,41 @@ class HomeScreen extends ConsumerWidget {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: const Row(
+        automaticallyImplyLeading: false,
+        title: const Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Icon(HugeIcons.strokeRoundedLocation01),
-            Gap(5),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            Text(
+              'Your location',
+              style: TextStyle(fontSize: 12),
+            ),
+            Row(
               children: [
                 Text(
-                  'Kiling Road',
-                  style: TextStyle(fontSize: 17),
+                  'Kiling road, Baridua',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
-                Text(
-                  'Baridua, India',
-                  style: TextStyle(fontSize: 12),
-                ),
+                Icon(
+                  Icons.keyboard_arrow_down,
+                  size: 24,
+                )
               ],
             ),
           ],
         ),
+        actions: [
+          TextButton(
+            onPressed: () {},
+            style: TextButton.styleFrom(
+                shape: const CircleBorder(),
+                backgroundColor: kyellow,
+                foregroundColor: Colors.white),
+            child: const Text(
+              'I',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+            ),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -40,7 +56,7 @@ class HomeScreen extends ConsumerWidget {
               child: SizedBox(
                 height: size.height * 0.23,
                 width: size.width,
-                child: Placeholder(),
+                child: const Placeholder(),
               ),
             ),
             const Gap(10),
@@ -60,7 +76,7 @@ class HomeScreen extends ConsumerWidget {
                 children: List.generate(
                     6,
                     (index) => Container(
-                          margin: EdgeInsets.symmetric(horizontal: 8),
+                          margin: const EdgeInsets.symmetric(horizontal: 8),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12),
                           ),
