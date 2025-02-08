@@ -19,7 +19,10 @@ class LoginScreen extends StatelessWidget {
             SizedBox(
               height: size.height * 0.44,
               width: size.width,
-              child: const Placeholder(),
+              child: Image.asset(
+                "assets/placeholder1.jpg",
+                fit: BoxFit.cover,
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(24.0),
