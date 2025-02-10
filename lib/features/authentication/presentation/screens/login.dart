@@ -109,7 +109,7 @@ class LoginScreen extends StatelessWidget {
                           backgroundColor:
                               Theme.of(context).brightness == Brightness.light
                                   ? Colors.grey.shade100
-                                  : appBgColor),
+                                  : kbgcolor),
                       child: Text(
                         'Google',
                         style: TextStyle(
