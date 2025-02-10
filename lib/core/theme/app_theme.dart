@@ -44,11 +44,11 @@ final appDarkTheme = ThemeData(
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
             textStyle: const TextStyle(color: Colors.white))),
     useMaterial3: true,
-    scaffoldBackgroundColor: appBgColor,
+    scaffoldBackgroundColor: kbgcolor,
     appBarTheme: const AppBarTheme(
         foregroundColor: Colors.white,
-        backgroundColor: appBgColor,
-        surfaceTintColor: appBgColor));
+        backgroundColor: kbgcolor,
+        surfaceTintColor: kbgcolor));
 
 final textformfieldborder = OutlineInputBorder(
     borderRadius: BorderRadius.circular(12),
