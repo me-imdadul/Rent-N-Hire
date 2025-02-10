@@ -4,6 +4,7 @@ import 'package:hugeicons/hugeicons.dart';
 import 'package:iconly/iconly.dart';
 import 'package:rent_n_hire/core/constants/colors.dart';
 import 'package:rent_n_hire/core/constants/sizes.dart';
+import 'package:rent_n_hire/core/helpers/dark_mode.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
@@ -16,7 +17,7 @@ class SearchScreen extends StatelessWidget {
         title: Container(
           padding: const EdgeInsets.all(3),
           decoration: BoxDecoration(
-              color: kwhite,
+              color: isDakMode(context) ? kprimary : kwhite,
               boxShadow: [
                 BoxShadow(color: Colors.black.withOpacity(0.1), blurRadius: 10)
               ],

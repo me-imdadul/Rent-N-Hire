@@ -5,6 +5,7 @@ import 'package:rent_n_hire/core/theme/styles.dart';
 import 'package:text_divider/text_divider.dart';
 
 import '../../../../core/constants/colors.dart';
+import '../../../../core/helpers/dark_mode.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -33,9 +34,8 @@ class LoginScreen extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
-                        color: Theme.of(context).brightness == Brightness.light
-                            ? Colors.black87
-                            : Colors.grey),
+                        color:
+                            isDakMode(context) ? Colors.grey : Colors.black87),
                   ),
                   const Gap(25),
                   TextDivider.horizontal(
@@ -43,26 +43,23 @@ class LoginScreen extends StatelessWidget {
                     'Log in or sign up',
                     style: TextStyle(
                         fontSize: 13,
-                        color: Theme.of(context).brightness == Brightness.light
-                            ? Colors.black54
-                            : Colors.grey),
+                        color:
+                            isDakMode(context) ? Colors.grey : Colors.black54),
                   )),
                   const Gap(25),
                   Container(
                       decoration: const BoxDecoration(),
                       child: TextFormField(
                         style: TextStyle(
-                            color:
-                                Theme.of(context).brightness == Brightness.light
-                                    ? Colors.black87
-                                    : Colors.grey),
+                            color: isDakMode(context)
+                                ? Colors.grey
+                                : Colors.black87),
                         decoration: InputDecoration(
                             prefixText: '+91 ',
                             prefixStyle: TextStyle(
-                                color: Theme.of(context).brightness ==
-                                        Brightness.light
-                                    ? Colors.black
-                                    : Colors.grey,
+                                color: isDakMode(context)
+                                    ? Colors.grey
+                                    : Colors.black,
                                 fontSize: 15),
                             floatingLabelBehavior: FloatingLabelBehavior.always,
                             hintText: "Enter Phone Number",
@@ -91,9 +88,8 @@ class LoginScreen extends StatelessWidget {
                     'or',
                     style: TextStyle(
                         fontSize: 13,
-                        color: Theme.of(context).brightness == Brightness.light
-                            ? Colors.black54
-                            : Colors.grey),
+                        color:
+                            isDakMode(context) ? Colors.grey : Colors.black54),
                   )),
                   const Gap(25),
                   SizedBox(
@@ -106,18 +102,16 @@ class LoginScreen extends StatelessWidget {
                               side: const BorderSide(color: kyellow)),
                           fixedSize: const Size(double.infinity, 50),
                           foregroundColor: Colors.black45,
-                          backgroundColor:
-                              Theme.of(context).brightness == Brightness.light
-                                  ? Colors.grey.shade100
-                                  : kbgcolor),
+                          backgroundColor: isDakMode(context)
+                              ? kbgcolor
+                              : Colors.grey.shade100),
                       child: Text(
                         'Google',
                         style: TextStyle(
                             fontSize: 16,
-                            color:
-                                Theme.of(context).brightness == Brightness.light
-                                    ? Colors.black54
-                                    : Colors.grey),
+                            color: isDakMode(context)
+                                ? Colors.grey
+                                : Colors.black54),
                       ),
                     ),
                   ),
@@ -126,9 +120,8 @@ class LoginScreen extends StatelessWidget {
                     'By continuing, you agree to our Terms of Service, Privacy Policy',
                     style: TextStyle(
                         fontSize: 10,
-                        color: Theme.of(context).brightness == Brightness.light
-                            ? Colors.black87
-                            : Colors.grey,
+                        color:
+                            isDakMode(context) ? Colors.grey : Colors.black87,
                         fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
                   )

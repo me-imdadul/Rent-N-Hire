@@ -5,14 +5,15 @@ import 'package:go_router/go_router.dart';
 import 'package:rent_n_hire/core/theme/styles.dart';
 import 'package:rent_n_hire/shared/widgets/loading_dialog_widget.dart';
 
+import '../../../../core/helpers/dark_mode.dart';
+
 class UpdateUserDetail extends StatelessWidget {
   const UpdateUserDetail({super.key});
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    bool isDark =
-        Theme.of(context).brightness == Brightness.light ? false : true;
+    bool isDark = isDakMode(context);
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,

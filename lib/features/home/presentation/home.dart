@@ -4,6 +4,8 @@ import 'package:gap/gap.dart';
 import 'package:rent_n_hire/core/constants/colors.dart';
 import 'package:text_divider/text_divider.dart';
 
+import '../../../core/helpers/dark_mode.dart';
+
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
@@ -70,9 +72,7 @@ class HomeScreen extends ConsumerWidget {
                 'Explore',
                 style: TextStyle(
                     fontSize: 13,
-                    color: Theme.of(context).brightness == Brightness.light
-                        ? Colors.black54
-                        : Colors.grey),
+                    color: isDakMode(context) ? Colors.grey : Colors.black54),
               )),
               const Gap(30),
               Row(
@@ -120,19 +120,17 @@ class HomeScreen extends ConsumerWidget {
                       'Explore',
                       style: TextStyle(
                           fontSize: 18,
-                          color:
-                              Theme.of(context).brightness == Brightness.light
-                                  ? Colors.black
-                                  : Colors.grey),
+                          color: isDakMode(context)
+                              ? Colors.grey
+                              : Colors.black87),
                     ),
                     Text(
                       'see all',
                       style: TextStyle(
                           fontSize: 13,
-                          color:
-                              Theme.of(context).brightness == Brightness.light
-                                  ? Colors.black54
-                                  : Colors.grey),
+                          color: isDakMode(context)
+                              ? Colors.grey
+                              : Colors.black54),
                     ),
                   ],
                 ),
@@ -159,10 +157,9 @@ class HomeScreen extends ConsumerWidget {
                         'Category',
                         style: TextStyle(
                             fontSize: 13,
-                            color:
-                                Theme.of(context).brightness == Brightness.light
-                                    ? Colors.black87
-                                    : Colors.grey),
+                            color: isDakMode(context)
+                                ? Colors.grey
+                                : Colors.black87),
                       )
                     ],
                   ),
