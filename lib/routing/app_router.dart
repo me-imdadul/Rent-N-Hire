@@ -2,7 +2,7 @@ import 'package:go_router/go_router.dart';
 import 'package:rent_n_hire/features/authentication/presentation/screens/login.dart';
 import 'package:rent_n_hire/features/authentication/presentation/screens/update_user_detail.dart';
 import 'package:rent_n_hire/features/history/presentation/screens/history.dart';
-import 'package:rent_n_hire/features/search/presentation/screens/explore.dart';
+import 'package:rent_n_hire/features/search/presentation/screens/search.dart';
 import 'package:rent_n_hire/features/profile/presentation/screens/profile.dart';
 import 'package:rent_n_hire/routing/routes.dart';
 import 'package:rent_n_hire/shared/widgets/bottom_nav_bar.dart';
